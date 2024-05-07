@@ -1,3 +1,10 @@
+server:
+  port: 9505
+  
 spring:
   application:
     name: management_service
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://${CONFIG_SERVER_HOST:localhost}:9296
